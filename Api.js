@@ -1,14 +1,12 @@
-const http = require('http');
-const { json } = require('stream/consumers');
+const express = require('express');
+const app = express();
 const data = require('./data');
 
-http.createServer(function(req, res){
 
-    res.writeHead(200,{
-        'Content-Type':'application\json'
-    })
+app.get('/',(req,res)=>{
+    res.send(data)
+})
 
-    res.write(JSON.stringify(data));
-    res.end();
 
-}).listen(5000);
+
+app.listen(5000);
