@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const data = require('./data');
+const port = process.env.PORT || 8000;
 
 
 app.get('/',(req,res)=>{
@@ -9,4 +10,6 @@ app.get('/',(req,res)=>{
 
 
 
-app.listen(5000);
+app.listen(port, function() {
+    console.log(`we are listing at ${port}`);
+  });
